@@ -1,0 +1,31 @@
+<div class="row">
+    <div class="col-12">
+        <div class="body">
+            <div class="wrapper clearfix">
+                <div class="player-0-panel active" [class.active]="activePlayer === 0">
+                    <div class="player-name" id="name-0">{{ player[0] }}</div>
+                    <div class="player-score" id="score-0"> {{ scores[0] }}</div>
+                    <div class="player-current-box">
+                        <div class="player-current-label">Current</div>
+                        <div class="player-current-score" id="current-0">{{ currentScore[0] }}</div>
+                    </div>
+                </div>
+
+                <div class="player-1-panel" [class.active]="activePlayer === 1">
+                    <div class="player-name" id="name-1">{{ player[1] }}</div>
+                    <div class="player-score" id="score-1">{{ scores[1] }}</div>
+                    <div class="player-current-box">
+                        <div class="player-current-label">Current</div>
+                        <div class="player-current-score" id="current-1">{{ currentScore[1] }}</div>
+                    </div>
+                </div>
+
+                <button class="btn-new" (click)="onNewGame()"><i class="ion-ios-plus-outline"></i>New game</button>
+                <button class="btn-roll" (click)="onRole()" [disabled]="gameEnd"><i class="ion-ios-loop"></i>Roll dice</button>
+                <button class="btn-hold" (click)="onHold()" [disabled]="gameEnd"><i class="ion-ios-download-outline"></i>Hold</button>
+
+                <img [src]="imgPath" alt="Dice" class="dice" [style.display]="gameStart ? 'block': 'none'">
+            </div>
+        </div>
+    </div>
+</div>
